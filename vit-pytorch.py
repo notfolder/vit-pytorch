@@ -34,7 +34,7 @@ import datetime
 #os.makedirs(LOG_DIR, True)
 
 # Training settings
-batch_size = 1
+batch_size = 16
 #batch_size = 64
 #batch_size = 256
 #batch_size = 512
@@ -167,17 +167,17 @@ print(len(val_dataset), len(valid_loader))
 #    k=256
 #)
 
-## ViT-B
-#model = ViT(
-#    dim = 768,
-#    depth = 12,
-#    heads = 12,
-#    mlp_dim = 3072,
-#    image_size=32,
-#    patch_size=4,
-#    num_classes=8,
-#    channels=3,
-#).to(device)
+# ViT-B
+model = ViT(
+    dim = 768,
+    depth = 12,
+    heads = 12,
+    mlp_dim = 3072,
+    image_size=32,
+    patch_size=4,
+    num_classes=8,
+    channels=3,
+).to(device)
 
 ## ViT-L
 #model = ViT(
@@ -191,17 +191,17 @@ print(len(val_dataset), len(valid_loader))
 #    channels=3,
 #).to(device)
 
-# ViT-H
-model = ViT(
-    dim = 1280,
-    depth = 32,
-    heads = 16,
-    mlp_dim = 5120,
-    image_size=32,
-    patch_size=4,
-    num_classes=8,
-    channels=3,
-).to(device)
+## ViT-H
+#model = ViT(
+#    dim = 1280,
+#    depth = 32,
+#    heads = 16,
+#    mlp_dim = 5120,
+#    image_size=32,
+#    patch_size=4,
+#    num_classes=8,
+#    channels=3,
+#).to(device)
 
 from torchsummary import summary
 summary(model, (3,32,32))

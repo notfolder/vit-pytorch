@@ -34,7 +34,8 @@ import datetime
 #os.makedirs(LOG_DIR, True)
 
 # Training settings
-batch_size = 1
+#batch_size = 1
+batch_size = 16
 #batch_size = 64
 #batch_size = 256
 #batch_size = 512
@@ -167,17 +168,17 @@ print(len(val_dataset), len(valid_loader))
 #    k=256
 #)
 
-## ViT-B
-#model = ViT(
-#    dim = 768,
-#    depth = 12,
-#    heads = 12,
-#    mlp_dim = 3072,
-#    image_size=128,
-#    patch_size=16,
-#    num_classes=8,
-#    channels=3,
-#).to(device)
+# ViT-B
+model = ViT(
+    dim = 768,
+    depth = 12,
+    heads = 12,
+    mlp_dim = 3072,
+    image_size=128,
+    patch_size=16,
+    num_classes=8,
+    channels=3,
+).to(device)
 
 ## ViT-L
 #model = ViT(
